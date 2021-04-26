@@ -1,5 +1,5 @@
 function solution(n, arr1, arr2) {
-  var answer = [];
+  const answer = [];
   const arr1To2 = arr1.map(arr => {
     let ar = arr.toString(2);
     while (ar.length < n) {
