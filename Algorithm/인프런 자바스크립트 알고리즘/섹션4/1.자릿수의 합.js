@@ -33,6 +33,7 @@ function solution(n, arr) {
     let sum = 0,
       tmp = x;
     while (tmp) {
+      // 숫자를 문자 => 숫자로 변환하지 않고 자리수 더하는 방법
       sum += tmp % 10;
       tmp = Math.floor(tmp / 10);
     }
