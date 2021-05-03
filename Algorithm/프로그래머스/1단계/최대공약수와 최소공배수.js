@@ -14,9 +14,7 @@ function solution(n, m) {
 
   return answer;
 }
-
 console.log(solution(60, 48));
-
-
-
+console.log(solution(3, 12));
+console.log(solution(2, 5));
 

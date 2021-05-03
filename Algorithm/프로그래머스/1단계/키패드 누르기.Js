@@ -71,8 +71,8 @@ function solution(numbers, hand) {
   let right = '#';
 
   function difference(left, right, num) {
-    const leftDiff = Math.abs(keypad[left + ''][0] - keypad[num + ''][0]) + Math.abs(keypad[left + ''][1] - keypad[num + ''][1]);
-    const rightDiff = Math.abs(keypad[right + ''][0] - keypad[num + ''][0]) + Math.abs(keypad[right + ''][1] - keypad[num + ''][1]);
+    const leftDiff = Math.abs(keypad[left][0] - keypad[num][0]) + Math.abs(keypad[left][1] - keypad[num][1]);
+    const rightDiff = Math.abs(keypad[right][0] - keypad[num][0]) + Math.abs(keypad[right][1] - keypad[num][1]);
 
     if (leftDiff === rightDiff) return hand === 'left' ? 'L' : 'R';
     return leftDiff < rightDiff ? 'L' : 'R';
