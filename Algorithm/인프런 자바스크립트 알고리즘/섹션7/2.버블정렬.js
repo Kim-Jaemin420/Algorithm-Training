@@ -29,3 +29,18 @@ function solution(arr) {
   }
   return answer;
 }
+
+/////////////////////////////////////////////
+// 2회차 풀이
+////////////////////////////////////////////
+function solution(arr) {
+  let answer = arr;
+
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr.length - 1; j++) {
+      if (arr[j] > arr[j + 1]) [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+    }
+  }
+
+  return answer;
+}
