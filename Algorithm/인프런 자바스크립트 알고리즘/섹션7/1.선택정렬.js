@@ -26,3 +26,21 @@ function solution(arr) {
   }
   return answer;
 }
+
+/////////////////////////////////////////////
+// 2회차 풀이
+////////////////////////////////////////////
+function solution(arr) {
+  let answer = arr;
+
+  for (let i = 0; i < arr.length; i++) {
+    let idxMin = i;
+    for (let j = i + 1; i < arr.length; j++) {
+      if (arr[j] < arr[idxMin]) idxMin = j;
+    }
+
+    [arr[i], arr[idxMin]] = [arr[idxMin], arr[i]];
+  }
+
+  return answer;
+}
