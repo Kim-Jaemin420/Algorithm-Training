@@ -44,3 +44,24 @@ function solution(arr) {
 
   return answer;
 }
+
+/////////////////////////////////////////////
+// 3회차 풀이
+////////////////////////////////////////////
+function solution(arr) {
+  let answer = arr;
+
+  for (let i = 0; i < arr.length - 1; i++) {
+    let lowest = i;
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[lowest] > arr[j]) {
+        lowest = j;
+      }
+    }
+    [arr[lowest], arr[i]] = [arr[i], arr[lowest]];
+  }
+  return answer;
+}
+
+let arr = [13, 5, 11, 7, 23, 15];
+console.log(solution(arr));
