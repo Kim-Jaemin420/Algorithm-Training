@@ -1,4 +1,4 @@
-// // 내 답
+// 내 답
 // function solution(arr) {
 //   let answer = arr;
 
@@ -14,7 +14,7 @@
 // let arr = [11, 7, 5, 6, 10, 9];
 // console.log(solution(arr));
 
-// // 강사님 답
+// 강사님 답
 function solution(arr) {
   let answer = arr;
   for (let i = 0; i < arr.length; i++) {
@@ -52,4 +52,26 @@ function solution(arr) {
 
   return answer;
 }
-// (삽입 정렬 한 번 더 풀어보기)
+
+/////////////////////////////////////////////
+// 3회차 풀이
+////////////////////////////////////////////
+function solution(arr) {
+  let answer = arr;
+
+  for (let i = 0; i < arr.length - 1; i++) {
+    for (let j = i + 1; j > 0; j--) {
+      if (arr[j] < arr[j - 1]) {
+        [arr[j], arr[j - 1]] = [arr[j - 1], arr[j]];
+        // break를 하는 이유는
+        // 앞의 요소와 비교했을 때 바꾸지 않았다면
+        // 그 앞의 것과 비교할 필요가 없기 때문이다.
+      } else break;
+    }
+  }
+
+  return answer;
+}
+
+let arr = [11, 7, 5, 6, 10, 9];
+console.log(solution(arr));
