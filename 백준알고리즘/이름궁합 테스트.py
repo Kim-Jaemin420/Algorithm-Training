@@ -17,5 +17,5 @@ lst = [alpha[ord(i) - ord("A")] for i in whole_name]
 for i in range(N + M - 2):
     for j in range(N + M - 1 - i):
         lst[j] += lst[j + 1]
-print(lst)
+
 print("{}%".format(lst[0] % 10 * 10 + lst[1] % 10))
