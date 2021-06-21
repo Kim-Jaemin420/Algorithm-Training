@@ -34,4 +34,7 @@ node_modules
 dist/*
 *.log
 
+input.txt
+output.txt
+
 # End of https://www.toptal.com/developers/gitignore/api/macos
