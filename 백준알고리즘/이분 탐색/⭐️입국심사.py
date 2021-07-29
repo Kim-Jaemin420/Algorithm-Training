@@ -23,3 +23,30 @@ while sp <= ep:
         ans = min(ans, md)
         ep = md - 1
 print(ans)
+
+####################################
+# 2회차 풀이
+####################################
+input = sys.stdin.readline
+
+N, M = map(int, input().split())
+times = [int(input()) for _ in range(N)]
+
+sp = min(times)
+ep = max(times) * M
+
+answer = 0
+while sp <= ep:
+    md = (sp + ep) // 2
+
+    total = 0
+    for time in times:
+        total += md // time
+
+    if total < M:
+        sp = md + 1
+    else:
+        answer = md
+        ep = md - 1
+
+print(answer)
