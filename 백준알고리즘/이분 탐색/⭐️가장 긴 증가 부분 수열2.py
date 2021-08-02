@@ -33,3 +33,37 @@ def solution():
 
 solution()
 print(len(LIS))
+
+####################################
+# 2회차 풀이
+####################################
+input = sys.stdin.readline
+
+N = int(input())
+arr = list(map(int, input().split()))
+
+LIS = []
+
+
+def binary_search(n, arr):
+    sp = 0
+    ep = len(arr) - 1
+
+    while sp <= ep:
+        md = (sp + ep) // 2
+
+        if arr[md] < n:
+            sp = md + 1
+        else:
+            ep = md - 1
+    return sp
+
+
+for n in arr:
+    if not LIS or n > LIS[-1]:
+        LIS.append(n)
+    else:
+        res = binary_search(n, LIS)
+        LIS[res] = n
+
+print(len(LIS))
