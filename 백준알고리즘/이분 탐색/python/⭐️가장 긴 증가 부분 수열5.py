@@ -4,8 +4,9 @@ input = sys.stdin.readline
 N = int(input())
 A = list(map(int, input().split()))
 
-LIS_index = []
+
 LIS = []
+LIS_index = []
 
 
 def binary_search(arr, n):
@@ -14,6 +15,7 @@ def binary_search(arr, n):
 
     while sp <= ep:
         md = (sp + ep) // 2
+
         if arr[md] < n:
             sp = md + 1
         else:
@@ -22,23 +24,26 @@ def binary_search(arr, n):
     return sp
 
 
-for i in range(len(A)):
-    if not LIS or LIS[-1] < A[i]:
-        LIS.append(A[i])
-        LIS_index.append((len(LIS) - 1, A[i]))
-    else:
-        res = binary_search(LIS, A[i])
-        LIS_index.append((res, A[i]))
+def solution():
+    for num in A:
+        if not LIS or LIS[-1] < num:
+            LIS.append(num)
+            LIS_index.append((len(LIS) - 1, num))
+        else:
+            res = binary_search(LIS, num)
+            LIS[res] = num
+            LIS_index.append((res, num))
 
-answer = []
+
+solution()
+
 idx = len(LIS) - 1
+answer = []
 
 for i in range(len(LIS_index) - 1, -1, -1):
     if idx == LIS_index[i][0]:
-        print(LIS_index[i][1])
         answer.append(LIS_index[i][1])
         idx -= 1
 
-print(LIS_index)
 print(len(answer))
-print(*answer[::-1])
+print(*reversed(answer))
