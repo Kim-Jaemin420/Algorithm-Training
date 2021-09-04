@@ -28,11 +28,11 @@ function findIdx(LIS, num) {
 function solution() {
   const LIS = [];
 
-  for (let i = 0; i < N; i++) {
-    if (LIS.length === 0 || LIS[N - 1] < arr[i]) LIS.push(arr[i]);
+  for (let item of arr) {
+    if (LIS.length === 0 || LIS[LIS.length - 1] < item) LIS.push(item);
     else {
-      const idx = findIdx(LIS, arr[i]);
-      LIS[idx] = arr[i];
+      const idx = findIdx(LIS, item);
+      LIS[idx] = item;
     }
   }
 
