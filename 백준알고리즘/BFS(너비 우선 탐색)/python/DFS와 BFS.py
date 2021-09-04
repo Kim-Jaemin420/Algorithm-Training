@@ -8,6 +8,8 @@ for _ in range(M):
     m1, m2 = map(int, input().split())
     graph[m1][m2] = graph[m2][m1] = 1
 
+print(graph)
+
 
 def bfs():
     visited = list()
