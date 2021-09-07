@@ -9,7 +9,8 @@ visited[0][0] = 1
 queue = [(0, 0)]
 dx = [-1, 1, 0, 0]
 dy = [0, 0, -1, 1]
-
+print(matrix)
+print(visited)
 while queue:
     x, y = queue.pop(0)
 
