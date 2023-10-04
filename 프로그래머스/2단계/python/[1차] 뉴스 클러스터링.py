@@ -37,3 +37,10 @@ print(solution('FRANCE', 'french'))
 print(solution('aa1+aa2', 'AAAA12'))
 print(solution('handshake', 'shake hands'))
 print(solution('aabbb', 'aaabb'))
+
+nums1 = [1,2,3]
+def s(nums):
+  nums = nums[1:]
+
+s(nums1)
+print(nums1)
